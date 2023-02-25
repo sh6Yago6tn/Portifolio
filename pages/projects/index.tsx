@@ -6,7 +6,7 @@ export default function Projects(){
             <section className={style.Projects}>
                 <div id={style.one}>
                     <h2>Pokedex</h2>
-                    <Link href="/" >See more</Link>
+                    <Link href="/projects/pokedex" >See more</Link>
                 </div>
                 <div id="two">
                     <h2>Project</h2>

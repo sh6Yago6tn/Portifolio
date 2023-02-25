@@ -1,0 +1,39 @@
+.title{
+    text-align: center;
+    background-color: #44475a;
+}
+
+.pokedex ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #44475a;
+}
+
+#cards {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #282a36;
+width: 15%;
+padding: 2rem 2rem;
+margin-top: 2rem;
+border-radius: 12px;
+border: solid 2px #282a36;
+box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
+}
+
+#cards h2{
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+#cards p{
+    color: #f8f8f2;
+}
+
+.btn{
+    margin-top: .5rem;
+
+}
