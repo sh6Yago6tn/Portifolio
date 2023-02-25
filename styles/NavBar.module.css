@@ -1,0 +1,47 @@
+.NavBar {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: #282a36;
+    height: 3rem;
+    width: 100%;
+}
+
+.NavBar h1 {
+    font-size: 1.7rem;
+    padding: .5rem;
+    color: #f8f8f2;
+}
+
+.NavBar li #active{
+    color: #50fa7b;
+}
+
+.NavBar li #active:hover{
+    color: #ff79c6;
+    transition: 1s;
+}
+
+.NavBar ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+
+.NavBar li {
+    margin-right: 10%;
+}
+
+.active {
+    color: #50fa7b;
+}
+
+.NavBar li a {
+    color: #f8f8f2;
+    font-size: 1.1rem;
+}
+
+.NavBar li a:hover{
+    color: #ff79c6;
+    transition: 1s;
+}
