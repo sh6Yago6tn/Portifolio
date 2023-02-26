@@ -65,6 +65,23 @@ export default function Pokedex({pokeList}: InferGetStaticPropsType<typeof getSt
     return (
         <div className={styles.pokeBody}>
             <h1 className={styles.title}>Pokedex</h1>
+            <div className={styles.pagination}>
+                    <button
+                        disabled={page === 1}
+                        onClick={handlePreviousPage}
+                    >
+                        Previous
+                    </button>
+                    <p>
+                        Page {page} of {totalPages}
+                    </p>
+                    <button
+                        disabled={page === totalPages}
+                        onClick={handleNextPage}
+                    >
+                        Next
+                    </button>
+                </div>
             <div id={styles.searchBtn}>
             <input 
                     type="text" 
