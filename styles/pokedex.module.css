@@ -1,7 +1,26 @@
+.pokeBody{
+    height: 100vh;
+    background-color: #44475a;
+}
+
 .title{
     text-align: center;
     background-color: #44475a;
     color: #f8f8f2;
+}
+
+#searchBtn {
+    background-color: #44475a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#searchBtn input{
+    margin-top: 1rem;
+    outline: none;
+    padding: 6px 16px;
+    border: solid 1px #ff5555;
 }
 
 .pokedex ul {
