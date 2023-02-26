@@ -52,12 +52,13 @@
 
 .Projects a:hover{
     transition: 1s;
-    background-color: rgba(80, 250, 122, 0.2588235294);
+    background-color: rgba(80, 250, 122, 0.377);
 }
 
 .Projects #one{
-    background-image: url("../public/images/1.jpg");
+    background-image: url("../public/images/pokedex.jpg");
     background-size: 100%;
+    background-position: center;
     background-position: center;
     background-repeat: no-repeat;
     filter: grayscale(100%);
@@ -69,5 +70,5 @@
     background-size: 120%;
   transition: 2;
   filter: grayscale(0);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/images/1.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/images/pokedex.jpg");
 }

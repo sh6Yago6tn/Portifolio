@@ -1,11 +1,8 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from "next";
 import axios from "axios";
-import styles from "../../styles/pokedex.module.css"
-import PokeCard from "@/components/PokeCard";
-import Image from "next/image";
+import styles from "../../../styles/pokedex.module.css"
 import Link from "next/link";
 type Poke = {
-    id: string;
     name: string;
     url: string;
 }
@@ -15,10 +12,11 @@ type Props = {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const maxPoke = 50;    
-    const url = "https://pokeapi.co/api/v2/pokemon/";
-    const res = await axios.get<Poke[]>(`${url}/?limit=${maxPoke}`);
-    const pokeList: Poke[] = res.data.results;
+    const maxPoke = 100;    
+    const urlName = "https://pokeapi.co/api/v2/pokemon/";
+    const pokemon = await axios.get<Poke[]>(`${urlName}/?limit=${maxPoke}`);
+
+    const pokeList: Poke[] = pokemon.data.results;
     
     return {
         props: {pokeList},
@@ -36,7 +34,7 @@ export default function Pokedex({pokeList}: InferGetStaticPropsType<typeof getSt
                             <img width={120} height={120} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${(index+1)}.svg`}></img>
                             <p className={styles.id}>#{(index+1)}</p>
                             <h2 className={styles.title}>{pokemon.name}</h2>
-                            <Link className={styles.btn} href={`https://pokeapi.co/api/v2/ability/${(index+1)}`}>Detalhes</Link>
+                            <Link className={styles.btn} href={`/projects/pokedex/${index+1}`}>Detalhes</Link>
                         </li>
                     
                     ))}</ul>

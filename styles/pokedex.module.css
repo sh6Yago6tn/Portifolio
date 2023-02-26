@@ -1,6 +1,7 @@
 .title{
     text-align: center;
     background-color: #44475a;
+    color: #f8f8f2;
 }
 
 .pokedex ul {
@@ -21,7 +22,7 @@ width: 15%;
 padding: 2rem 2rem;
 margin-top: 2rem;
 border-radius: 12px;
-border: solid 2px #282a36;
+border: solid 2px #f8f8f2;
 box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
 }
 
@@ -30,10 +31,23 @@ box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
     color: #f8f8f2;
 }
 #cards p{
+    margin-top: 1rem;
+    border-radius: 12px;
+    padding: 2px;
     color: #f8f8f2;
+    background-color: #ff5555;
 }
 
 .btn{
-    margin-top: .5rem;
+    color: #282a36;
+    font-weight: 600;
+    background-color: #f8f8f2;
+    margin-top: 1rem;
+    border-radius: 6px;
+    padding: .3rem .6rem;
+}
 
+.btn:hover{
+    transition: 1s;
+    background-color: #ff5555;
 }
