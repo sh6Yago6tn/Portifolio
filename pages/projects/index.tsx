@@ -8,9 +8,9 @@ export default function Projects(){
                     <h2>Pokedex</h2>
                     <Link href="/projects/pokedex" >See more</Link>
                 </div>
-                <div id="two">
+                <div id={style.two}>
                     <h2>Project</h2>
-                    <Link href="">See more</Link>
+                    <Link href="/projects/calculator">See more</Link>
                 </div>
                 <div id="three">
                     <h2>PROJECT</h2>

@@ -2,7 +2,7 @@ import axios from "axios"
 import styles from "../../../styles/pokemon.module.css";
 
 export const getStaticPaths = async () => {
-    const maxPoke = 1279;    
+    const maxPoke = 649;    
     const urlName = "https://pokeapi.co/api/v2/pokemon/";
     const pokemon = await axios.get(`${urlName}/?limit=${maxPoke}`);
     

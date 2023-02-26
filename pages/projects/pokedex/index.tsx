@@ -13,7 +13,7 @@ type Props = {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const maxPoke = 1279;    
+    const maxPoke = 649;    
     const urlName = "https://pokeapi.co/api/v2/pokemon/";
     const pokemon = await axios.get<Poke[]>(`${urlName}/?limit=${maxPoke}`);
 
@@ -44,19 +44,16 @@ export default function Pokedex({pokeList}: InferGetStaticPropsType<typeof getSt
         }
     }
 
-    const pageNumbers = [];
-        for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i);
-    }
-
     const getDisplayList = () => {
         const start = (page - 1 ) * PAGE_SIZE;
         const end = start + PAGE_SIZE;
+        //console.log(start, end)
         return filterList.slice(start, end);
     }
 
 
     const filterList = pokeList.filter(pokemon => pokemon.name.toLowerCase().includes(name.toLowerCase()))
+    //console.log(filterList)
 
     const searchBtn = e => {
         setName(e.target.value);

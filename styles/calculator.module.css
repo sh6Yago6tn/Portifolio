@@ -1,0 +1,105 @@
+.bodycalc {
+    background-color: #282a36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2em;
+}
+
+#homes {
+    color: #f8f8f2;
+    margin: .3rem .5rem;
+    font-size: 1.4rem;
+}
+
+#homes:hover {
+    transition: 1s;
+    color: #50fa7b;
+
+}
+
+#calc {
+    border-radius: 20px;
+    width: 25rem;
+    padding: 1em;
+    background-color: #44475a;
+    color: #f8f8f2;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+
+#calc h3 {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #8be9fd;
+}
+
+#op {
+    text-align: right;
+}
+
+#previousop {
+    color: #6272a4;
+    padding: 0.2em;
+    overflow-wrap: break-word;
+    min-height: 1.6em;
+}
+
+#currentop {
+    border: solid 2px #282a36;
+    background-color: #282a36;
+    border-radius: 5px;
+    min-height: 1.6;
+    font-size: 2.6em;
+    font-weight: 700;
+    padding: 0.2em;
+    overflow: hidden;
+}
+
+#wrapperbuttons {
+    padding: 2.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.6em;
+}
+
+#wrapperbuttons button {
+    color: #282a36;
+    border: none;
+    height: 5.4em;
+    width: 5.4em;
+    border-radius: 200rem;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+#wrapperbuttons .number {
+    background-color: #8be9fd;
+}
+
+#wrapperbuttons .opbutton {
+    background-color: #e27171;
+}
+
+#wrapperbuttons #ce {
+    border-radius: 30px;
+    width: 11.2em;
+    grid-column: span 2;
+}
+
+#wrapperbuttons #equal {
+    border-radius: 30px;
+    width: 11.2em;
+    grid-column: span 2;
+}
+
+#wrapperbuttons button:hover {
+    background-color: #ff79c6;
+    color: #f8f8f2;
+    transition: 1s;
+}
+
+/*# sourceMappingURL=style.css.map */
