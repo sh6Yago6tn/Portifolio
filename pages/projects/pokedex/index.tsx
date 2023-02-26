@@ -13,7 +13,7 @@ type Props = {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-    const maxPoke = 500;    
+    const maxPoke = 1279;    
     const urlName = "https://pokeapi.co/api/v2/pokemon/";
     const pokemon = await axios.get<Poke[]>(`${urlName}/?limit=${maxPoke}`);
 
@@ -26,7 +26,35 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 }   
 
 export default function Pokedex({pokeList}: InferGetStaticPropsType<typeof getStaticProps>){
+    const PAGE_SIZE = 20;
+    const [page, setPage] = useState(1);
     const [name, setName] = useState("");
+
+    const totalPages = Math.ceil(pokeList.length / PAGE_SIZE);
+
+    const handlePreviousPage = () => {
+        if (page > 1){
+          setPage(page - 1);
+        }
+    }
+
+    const handleNextPage = () => {
+        if (page < totalPages) {
+        setPage(page + 1);
+        }
+    }
+
+    const pageNumbers = [];
+        for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+    }
+
+    const getDisplayList = () => {
+        const start = (page - 1 ) * PAGE_SIZE;
+        const end = start + PAGE_SIZE;
+        return filterList.slice(start, end);
+    }
+
 
     const filterList = pokeList.filter(pokemon => pokemon.name.toLowerCase().includes(name.toLowerCase()))
 
@@ -36,29 +64,47 @@ export default function Pokedex({pokeList}: InferGetStaticPropsType<typeof getSt
 
     return (
         <div className={styles.pokeBody}>
-                <h1 className={styles.title}>Pokedex</h1>
-                <div id={styles.searchBtn}>
-                <input 
-                        type="text" 
-                        placeholder="Search by name" 
-                        value={name} 
-                        onChange={searchBtn}
-                    />
-                </div>
-                <section className={styles.pokedex}>
-                    <ul>{filterList.map((pokemon) => {
-                        //console.log(pokemon.url.split("/")[6]); caçando id
-                        const id = pokemon.url.split("/")[6];
+            <h1 className={styles.title}>Pokedex</h1>
+            <div id={styles.searchBtn}>
+            <input 
+                    type="text" 
+                    placeholder="Search by name" 
+                    value={name} 
+                    onChange={searchBtn}
+                />
+            </div>
+            <section className={styles.pokedex}>
+                <ul>{getDisplayList().map((pokemon) => {
+                    //console.log(pokemon.url.split("/")[6]); caçando id
+                    const id = pokemon.url.split("/")[6];
                     return(    
                         <li id={styles.cards} key={id}>
-                            <img width={120} height={120} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}></img>
+                            <img width={120} height={120} 
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${(id)}.svg`}></img>
                             <p className={styles.id}>#{id}</p>
                             <h2 className={styles.title}>{pokemon.name}</h2>
                             <Link className={styles.btn} href={`/projects/pokedex/${id}`}>Detalhes</Link>
                         </li>
                     )
-                    })}</ul>
-                </section>
+                })}</ul>
+                <div className={styles.pagination}>
+                    <button
+                        disabled={page === 1}
+                        onClick={handlePreviousPage}
+                    >
+                        Previous
+                    </button>
+                    <p>
+                        Page {page} of {totalPages}
+                    </p>
+                    <button
+                        disabled={page === totalPages}
+                        onClick={handleNextPage}
+                    >
+                        Next
+                    </button>
+                </div>
+            </section>
         </div>
     )
 }

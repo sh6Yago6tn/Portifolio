@@ -1,9 +1,9 @@
-.pokeBody{
+.pokeBody {
     height: 100vh;
     background-color: #44475a;
 }
 
-.title{
+.title {
     text-align: center;
     background-color: #44475a;
     color: #f8f8f2;
@@ -14,9 +14,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
-#searchBtn input{
+
+#searchBtn input {
     margin-top: 1rem;
     outline: none;
     padding: 6px 16px;
@@ -32,24 +33,25 @@
 }
 
 #cards {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-background-color: #282a36;
-width: 15%;
-padding: 2rem 2rem;
-margin-top: 2rem;
-border-radius: 12px;
-border: solid 2px #f8f8f2;
-box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #282a36;
+    width: 15%;
+    padding: 2rem 2rem;
+    margin-top: 2rem;
+    border-radius: 12px;
+    border: solid 2px #f8f8f2;
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
 }
 
-#cards h2{
+#cards h2 {
     background-color: #282a36;
     color: #f8f8f2;
 }
-#cards p{
+
+#cards p {
     margin-top: 1rem;
     border-radius: 12px;
     padding: 2px;
@@ -57,7 +59,7 @@ box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
     background-color: #ff5555;
 }
 
-.btn{
+.btn {
     color: #282a36;
     font-weight: 600;
     background-color: #f8f8f2;
@@ -66,7 +68,29 @@ box-shadow: 12px 12px 20px rgba(0, 0, 0, .5);
     padding: .3rem .6rem;
 }
 
-.btn:hover{
+.btn:hover {
     transition: 1s;
     background-color: #ff5555;
+}
+
+.pagination {
+    background-color: #44475a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.pagination button {
+    border: none;
+    margin-right: 1rem;
+    padding: .2rem .4rem;
+    border-radius: 6px;
+    background-color: #f8f8f2;
+
+}
+
+.pagination p {
+    margin-right: 1rem;
+    color: #f8f8f2;
 }
